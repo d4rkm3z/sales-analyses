@@ -1,0 +1,12 @@
+.root {
+}
+
+.Title {
+  font-size: 4.167vw;
+  font-weight: bold;
+}
+
+.List {
+  display: flex;
+  justify-content: space-between;
+}
