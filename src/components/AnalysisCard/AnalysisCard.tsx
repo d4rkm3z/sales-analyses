@@ -26,7 +26,7 @@ export const AnalysisCard: React.FC<IProps> = ({
       <Text type={'secondary'} className={styles.Description}>
         {description}
       </Text>
-      <div>
+      <div className={styles.ImageWrapper}>
         <ImageComponent className={styles.Image} />
       </div>
       <Button type={'primary'}>Начать анализ</Button>
