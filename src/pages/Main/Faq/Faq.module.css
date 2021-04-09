@@ -1,0 +1,35 @@
+.root {
+  padding: 0 29.167vw;
+}
+
+.Panel {
+  padding: 2.917vw 0;
+
+  &:nth-child(odd) {
+    border-top: 1px solid rgba(0, 65, 102, 0.2);
+    border-bottom: 1px solid rgba(0, 65, 102, 0.2);
+  }
+
+  & .Header {
+    font-size: 1.667vw;
+    font-weight: 700;
+    line-height: 2.167vw;
+  }
+
+  & .Content {
+    display: inline-flex;
+    width: 90%;
+
+    font-size: 0.833vw;
+    line-height: 1.333vw;
+  }
+}
+
+.Title {
+  padding: 3.125vw 0 4.167vw 0;
+
+  text-align: center;
+  font-size: 4.167vw;
+  font-weight: bold;
+  line-height: 5vw;
+}

@@ -1,0 +1,20 @@
+.root {
+  padding: 6.250vw 17.083vw 0 5.313vw;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Demo {
+  width: 46.771vw;
+}
+
+.List {
+  padding-top: 3.250vw;
+
+  display: flex;
+  flex-direction: column;
+
+  flex-basis: 20.833vw;
+}

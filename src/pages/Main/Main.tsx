@@ -1,9 +1,11 @@
 import React from 'react';
 import { Button, Layout, Menu } from 'antd';
 import { FormattedMessage } from 'react-intl';
-import { Description } from 'pages/Main/Description';
-import { Analyses } from 'pages/Main/Analyses';
-import { Faq } from 'pages/Main/Faq';
+import { Description } from './Description';
+import { Analyses } from './Analyses';
+import { Faq } from './Faq';
+import { Steps } from './Steps';
+import { AnimatedText } from './AnimatedText';
 
 import styles from './Main.module.css';
 
@@ -56,6 +58,13 @@ export const Main: React.FC<IProps> = () => {
       <Content className={styles.Content}>
         <Description />
         <Analyses />
+        <AnimatedText key={1231} innerKey="at-1" text="Как это работает" />
+        <Steps />
+        <AnimatedText
+          key={12}
+          innerKey="at-2"
+          text="Быстро.Бесплатно.\nТочно."
+        />
         <Faq />
       </Content>
     </Layout>

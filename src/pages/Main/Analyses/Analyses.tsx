@@ -1,7 +1,7 @@
 import React, { createElement } from 'react';
 import { defineMessages, FormattedMessage } from 'react-intl';
 import { AnalysisCard } from 'components/AnalysisCard';
-import { LandingBlock } from 'components/LandingBlock';
+import { PaddingBlock } from 'components/PaddingBlock';
 import { CubeImage, TubeImage } from './cardImages';
 
 import styles from './Analyses.module.css';
@@ -24,7 +24,7 @@ const cards = [
     ImageComponent: CubeImage,
   },
   {
-    id: 'analyses.card.abc',
+    id: 'analyses.card.xyz',
     description: `Определение стабильности или устойчивости спроса на товары. 
     Поможет определить какие товары обязательно должны быть на складе или прилавке`,
     title: 'XYZ анализ',
@@ -35,7 +35,7 @@ const cards = [
 
 export const Analyses: React.FC<IProps> = () => {
   return (
-    <LandingBlock>
+    <PaddingBlock>
       <div className={styles.Title}>
         <FormattedMessage {...messages.title} />
       </div>
@@ -47,6 +47,6 @@ export const Analyses: React.FC<IProps> = () => {
           })
         )}
       </div>
-    </LandingBlock>
+    </PaddingBlock>
   );
 };

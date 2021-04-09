@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Typography } from 'antd';
 import { defineMessages, FormattedMessage } from 'react-intl';
-import { LandingBlock } from 'components/LandingBlock';
+import { PaddingBlock } from 'components/PaddingBlock';
 
 import styles from './Description.module.css';
 
@@ -26,7 +26,7 @@ const messages = defineMessages({
 
 export const Description: React.FC = () => {
   return (
-    <LandingBlock>
+    <PaddingBlock className={styles.root}>
       <div className={styles.Title}>
         <FormattedMessage {...messages.title} />
       </div>
@@ -43,6 +43,6 @@ export const Description: React.FC = () => {
       <Button type="primary">
         <FormattedMessage {...messages.button} />
       </Button>
-    </LandingBlock>
+    </PaddingBlock>
   );
 };
