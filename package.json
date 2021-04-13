@@ -65,7 +65,7 @@
     "plop": "^2.7.4",
     "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0",
-    "rc-scroll-anim": "file:../Not_working/rc-bundle/scroll-anim",
+    "rc-scroll-anim": "https://github.com/d4rkm3z/scroll-anim/tarball/master",
     "styled-components": "^5.2.1",
     "stylelint": "^13.11.0",
     "stylelint-order": "^4.1.0",

@@ -13580,8 +13580,9 @@ rc-resize-observer@^1.0.0:
     rc-util "^5.0.0"
     resize-observer-polyfill "^1.5.1"
 
-"rc-scroll-anim@file:../Not_working/rc-bundle/scroll-anim":
+"rc-scroll-anim@https://github.com/d4rkm3z/scroll-anim/tarball/master":
   version "2.7.6"
+  resolved "https://github.com/d4rkm3z/scroll-anim/tarball/master#0db7c8415be6e5dfecf0fcbe75d87af271df11ed"
   dependencies:
     babel-runtime "6.x"
     graceful-fs "^4.2.4"
