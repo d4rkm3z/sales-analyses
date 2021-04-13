@@ -1,72 +1,39 @@
 import React from 'react';
-import { Button, Layout, Menu } from 'antd';
-import { FormattedMessage } from 'react-intl';
-import { Description } from './Description';
+import { Layout } from 'antd';
+import { useWindowOffset } from 'hooks/useWindowOffset';
+
 import { Analyses } from './Analyses';
-import { Faq } from './Faq';
-import { Steps } from './Steps';
 import { AnimatedText } from './AnimatedText';
+import { headerItems } from './data';
+import { Description } from './Description';
+import { Faq } from './Faq';
+import { Header } from './Header';
+import { Steps } from './Steps';
 
 import styles from './Main.module.css';
 
-const { Header, Content } = Layout;
-
 interface IProps {}
 
-interface MenuItem {
-  id: number;
-  text: string;
-}
-
-const menuItems: MenuItem[] = [
-  {
-    id: 1,
-    text: 'О сервисе',
-  },
-  {
-    id: 2,
-    text: 'Как это работает',
-  },
-  {
-    id: 3,
-    text: 'Юридическая информация',
-  },
-  {
-    id: 4,
-    text: 'Конфиденциальность',
-  },
-];
+const isScrolledByVertical = (yOffset: number, startPosition: number): boolean =>
+  yOffset > startPosition;
 
 export const Main: React.FC<IProps> = () => {
+  const [, yOffset] = useWindowOffset();
+
   return (
     <Layout>
-      <Header>
-        <Menu mode="horizontal" className={styles.root}>
-          {menuItems.map(({ id, text }) => (
-            <Menu.Item key={id}>{text}</Menu.Item>
-          ))}
-          <Menu.Item>
-            <Button type="primary">
-              <FormattedMessage
-                id="header.button.calculating"
-                defaultMessage="Начать анализ"
-              />
-            </Button>
-          </Menu.Item>
-        </Menu>
-      </Header>
-      <Content className={styles.Content}>
+      <Header
+        menuItems={headerItems}
+        type={isScrolledByVertical(yOffset, 90) ? 'pinned' : 'default'}
+      />
+      <Layout.Content className={styles.Content}>
         <Description />
         <Analyses />
         <AnimatedText key={1231} innerKey="at-1" text="Как это работает" />
         <Steps />
-        <AnimatedText
-          key={12}
-          innerKey="at-2"
-          text="Быстро.Бесплатно.\nТочно."
-        />
+        <AnimatedText key={12} innerKey="at-2" text="Быстро.Бесплатно.\nТочно." />
         <Faq />
-      </Content>
+      </Layout.Content>
     </Layout>
   );
 };

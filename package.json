@@ -71,5 +71,8 @@
     "stylelint-order": "^4.1.0",
     "url-loader": "^4.1.1"
   },
+  "resolutions": {
+    "rc-scroll-anim/babel-loader": "8.1.0"
+  },
   "cracoConfig": "configs/craco.config.js"
 }

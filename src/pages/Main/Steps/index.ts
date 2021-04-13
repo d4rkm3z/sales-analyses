@@ -1,5 +1,3 @@
 import { Steps } from './Steps';
 
-export {
-  Steps
-}
+export { Steps };

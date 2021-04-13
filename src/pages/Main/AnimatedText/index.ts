@@ -1,5 +1,3 @@
 import { AnimatedText } from './AnimatedText';
 
-export {
-  AnimatedText
-}
+export { AnimatedText };

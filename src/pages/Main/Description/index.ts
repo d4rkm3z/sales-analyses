@@ -1,5 +1,3 @@
 import { Description } from './Description';
 
-export {
-  Description
-}
+export { Description };

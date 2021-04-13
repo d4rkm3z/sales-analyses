@@ -2,6 +2,7 @@ import React, { createElement } from 'react';
 import { defineMessages, FormattedMessage } from 'react-intl';
 import { AnalysisCard } from 'components/AnalysisCard';
 import { PaddingBlock } from 'components/PaddingBlock';
+
 import { CubeImage, TubeImage } from './cardImages';
 
 import styles from './Analyses.module.css';
@@ -44,7 +45,7 @@ export const Analyses: React.FC<IProps> = () => {
           createElement(AnalysisCard, {
             key: id,
             ...props,
-          })
+          }),
         )}
       </div>
     </PaddingBlock>

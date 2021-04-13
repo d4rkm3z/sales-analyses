@@ -1,5 +1,3 @@
 import { Faq } from './Faq';
 
-export {
-  Faq
-}
+export { Faq };

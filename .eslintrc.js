@@ -17,6 +17,7 @@ module.exports = {
     {
       files: ['**/*.ts?(x)'],
       rules: {
+        '@typescript-eslint/explicit-function-return-type': ['error'],
         '@typescript-eslint/naming-convention': [
           'error',
           {

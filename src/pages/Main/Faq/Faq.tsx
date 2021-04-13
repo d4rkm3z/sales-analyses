@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import { Collapse, Typography } from 'antd';
 import { PaddingBlock } from 'components/PaddingBlock';
 import { CollapseIcon, ExpandIcon } from 'pages/Main/Faq/icons';
@@ -31,23 +31,20 @@ const panels = [
   },
 ];
 
-const PanelTitle = (text: string) => (
+const PanelTitle = (text: string): ReactElement => (
   <Text className={styles.Header} strong>
     {text}
   </Text>
 );
 
+const CollapseExpandIcon = ({ isActive }: { isActive?: boolean }): ReactNode =>
+  isActive ? <CollapseIcon /> : <ExpandIcon />;
+
 export const Faq: React.FC<IProps> = () => {
   return (
     <PaddingBlock className={styles.root}>
       <div className={styles.Title}>Остались вопросы?</div>
-      <Collapse
-        expandIconPosition={'right'}
-        expandIcon={({ isActive }) =>
-          isActive ? <CollapseIcon /> : <ExpandIcon />
-        }
-        ghost
-      >
+      <Collapse expandIconPosition={'right'} expandIcon={CollapseExpandIcon} ghost>
         {panels.map(({ id, title, text }) => (
           <Panel className={styles.Panel} key={id} header={PanelTitle(title)}>
             <Text type={'secondary'} className={styles.Content}>

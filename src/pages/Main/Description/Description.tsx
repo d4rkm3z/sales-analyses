@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button, Typography } from 'antd';
 import { defineMessages, FormattedMessage } from 'react-intl';
+import { Button, Typography } from 'antd';
 import { PaddingBlock } from 'components/PaddingBlock';
 
 import styles from './Description.module.css';
@@ -35,9 +35,8 @@ export const Description: React.FC = () => {
           <FormattedMessage {...messages.message} />
         </span>
         <span>
-          Оно поможет оптимизировать работу и построить стратегию — в логистике,
-          закупках, продажах и маркетинге. Применяется в тайм-менеджменте и
-          оценке персонала.
+          Оно поможет оптимизировать работу и построить стратегию — в логистике, закупках, продажах
+          и маркетинге. Применяется в тайм-менеджменте и оценке персонала.
         </span>
       </Paragraph>
       <Button type="primary">

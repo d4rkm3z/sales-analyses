@@ -1,12 +1,13 @@
 import React from 'react';
-import { stepsList } from './data';
 import { Step } from 'components/Step';
+
+import { stepsList } from './data';
 
 import styles from './Steps.module.css';
 
 interface IProps {}
 
-const getHumanityIndex = (index: number) => String(++index);
+const getHumanityIndex = (index: number): string => String(++index);
 
 export const Steps: React.FC<IProps> = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Parallax } from 'rc-scroll-anim';
 import { Typography } from 'antd';
+import { Parallax } from 'rc-scroll-anim';
 
 import styles from './AnimatedText.module.css';
 
@@ -11,8 +11,7 @@ interface IProps {
 
 const { Text } = Typography;
 
-const combineKeys = (innerKey: string, ...args: string[]) =>
-  [innerKey, ...args].join('-');
+const combineKeys = (innerKey: string, ...args: string[]): string => [innerKey, ...args].join('-');
 
 export const AnimatedText: React.FC<IProps> = ({ innerKey, text }) => {
   const getKey = combineKeys.bind(null, innerKey);
@@ -22,7 +21,7 @@ export const AnimatedText: React.FC<IProps> = ({ innerKey, text }) => {
       <Parallax
         animation={{
           scale: 1,
-          onUpdate: (percent) => {
+          onUpdate: (percent): void => {
             console.log('scale anim percent:', percent);
           },
         }}
