@@ -3,7 +3,10 @@
 
 .Pinned {
   position: fixed;
+  width: 100%;
   z-index: 1000;
+  left: 0;
 }
 
-.Scrolled {}
+.Scrolled {
+}

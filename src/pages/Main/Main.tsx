@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { Layout } from 'antd';
-import { useWindowOffset } from 'hooks/useWindowOffset';
+import { useVScrollListener } from 'hooks/useVScrollListener';
+import { HeaderType } from 'pages/Main/enums';
 
 import { Analyses } from './Analyses';
 import { AnimatedText } from './AnimatedText';
@@ -14,18 +15,17 @@ import styles from './Main.module.css';
 
 interface IProps {}
 
-const isScrolledByVertical = (yOffset: number, startPosition: number): boolean =>
-  yOffset > startPosition;
-
 export const Main: React.FC<IProps> = () => {
-  const [, yOffset] = useWindowOffset();
+  const [verticalOffset, setVerticalOffset] = useState(0);
+  const getHeaderType = useCallback(() => {
+    return verticalOffset > 60 ? HeaderType.PINNED : HeaderType.DEFAULT;
+  }, [verticalOffset]);
+
+  useVScrollListener(setVerticalOffset);
 
   return (
     <Layout>
-      <Header
-        menuItems={headerItems}
-        type={isScrolledByVertical(yOffset, 90) ? 'pinned' : 'default'}
-      />
+      <Header menuItems={headerItems} type={getHeaderType()} />
       <Layout.Content className={styles.Content}>
         <Description />
         <Analyses />
