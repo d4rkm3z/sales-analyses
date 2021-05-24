@@ -6,31 +6,46 @@
   justify-content: stretch;
   position: relative;
 
-  margin: 16px;
-  padding: 60px;
+  margin: 0.833vw;
 
   border: 1px solid rgba(0, 65, 102, 0.2);
   border-radius: 8px;
 }
 
+.ContentWrapper {
+  padding: 3.125vw;
+}
+
 .Title {
-  font-size: 1.667vw;
-  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & .Text {
+    font-size: 1.667vw;
+    font-weight: bold;
+  }
+
+  & .Tag {
+    background: #ced8de;
+    border-radius: 10px;
+    border: none;
+  }
 }
 
 .Description {
+  display: block;
+  padding-right: 2.125vw;
   width: 19.583vw;
 
   text-align: start;
-  margin: 20px 0;
+  margin: 1.042vw 0;
   font-size: 0.833vw;
 }
 
 .ImageWrapper {
   position: absolute;
+  display: block;
   bottom: 0;
   right: 0;
-
-  width: 16.271vw;
-  height: 16.271vw;
 }

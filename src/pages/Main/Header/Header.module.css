@@ -1,12 +1,24 @@
 .root {
+  & .Default {
+    position: absolute;
+    background: transparent;
+  }
+
+  & .Pinned {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    left: 0;
+  }
 }
 
-.Pinned {
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-  left: 0;
+.Menu {
+  & .Pinned {
+    position: absolute;
+    background: transparent;
+  }
 }
 
-.Scrolled {
+.Button {
+  float: right;
 }

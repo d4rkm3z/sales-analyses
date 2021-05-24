@@ -2,12 +2,13 @@ import React, { createElement } from 'react';
 import { defineMessages, FormattedMessage } from 'react-intl';
 import { AnalysisCard } from 'components/AnalysisCard';
 import { PaddingBlock } from 'components/PaddingBlock';
-
-import { CubeImage, TubeImage } from './cardImages';
+import { ICardItem } from 'pages/Main/types';
 
 import styles from './Analyses.module.css';
 
-interface IProps {}
+interface IProps {
+  cards: ICardItem[];
+}
 
 const messages = defineMessages({
   title: {
@@ -16,25 +17,7 @@ const messages = defineMessages({
   },
 });
 
-const cards = [
-  {
-    id: 'analyses.card.abc',
-    description: `Разделение товаров на три категории по степени их значимости. 
-      Поможет определить рентабельные продукты, важных клиентов и поставщиков`,
-    title: 'АВС анализ',
-    ImageComponent: CubeImage,
-  },
-  {
-    id: 'analyses.card.xyz',
-    description: `Определение стабильности или устойчивости спроса на товары. 
-    Поможет определить какие товары обязательно должны быть на складе или прилавке`,
-    title: 'XYZ анализ',
-    tag: 'скоро появится',
-    ImageComponent: TubeImage,
-  },
-];
-
-export const Analyses: React.FC<IProps> = () => {
+export const Analyses: React.FC<IProps> = ({ cards }) => {
   return (
     <PaddingBlock>
       <div className={styles.Title}>

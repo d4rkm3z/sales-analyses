@@ -1,5 +1,10 @@
 .root {
   text-align: center;
+  padding-top: 15vw;
+
+  background: radial-gradient(circle at top -130.85px left -353px, rgba(37, 132, 255, 1), transparent 34%),
+  radial-gradient(circle at top -64px left 1608px, rgba(64, 144, 241, 1), transparent 30%),
+  radial-gradient(circle at top 288px left 1512px, rgba(105, 202, 248, 1), transparent 34%);
 }
 
 .Title {

@@ -8,6 +8,10 @@
 
 .Demo {
   width: 46.771vw;
+
+  & .ImageWrapper {
+    width: 100%;
+  }
 }
 
 .List {

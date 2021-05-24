@@ -1,5 +1,6 @@
-import React, { SVGProps } from 'react';
-import { Button, Typography } from 'antd';
+import React from 'react';
+import { Button, Tag, Typography } from 'antd';
+import { CommonImg } from 'components/CommonImg';
 
 import styles from './AnalysisCard.module.css';
 
@@ -8,28 +9,36 @@ const { Text } = Typography;
 interface IProps {
   title: string;
   description: string;
-  ImageComponent: React.FC<SVGProps<SVGSVGElement>>;
-  isStub?: boolean;
+  image: { src: string; alt: string };
+  disable?: boolean;
   tag?: string;
 }
 
 export const AnalysisCard: React.FC<IProps> = ({
   title,
   description,
-  ImageComponent,
-  isStub,
+  image,
+  disable,
   tag,
 }) => {
   return (
     <div className={styles.root}>
-      <div className={styles.Title}>{title}</div>
-      <Text type={'secondary'} className={styles.Description}>
-        {description}
-      </Text>
-      <div className={styles.ImageWrapper}>
-        <ImageComponent className={styles.Image} />
+      <div className={styles.ContentWrapper}>
+        <div className={styles.Title}>
+          <span className={styles.Text}>{title}</span>
+          {tag && (
+            <Tag color="default" className={styles.Tag}>
+              {tag}
+            </Tag>
+          )}
+        </div>
+        <Text type={'secondary'} className={styles.Description}>
+          {description}
+        </Text>
+        {!disable && <Button type={'primary'}>Начать анализ</Button>}
       </div>
-      <Button type={'primary'}>Начать анализ</Button>
+
+      <CommonImg {...image} className={styles.ImageWrapper} />
     </div>
   );
 };

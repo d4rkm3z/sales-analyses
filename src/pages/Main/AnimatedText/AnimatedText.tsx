@@ -11,7 +11,8 @@ interface IProps {
 
 const { Text } = Typography;
 
-const combineKeys = (innerKey: string, ...args: string[]): string => [innerKey, ...args].join('-');
+const combineKeys = (innerKey: string, ...args: string[]): string =>
+  [innerKey, ...args].join('-');
 
 export const AnimatedText: React.FC<IProps> = ({ innerKey, text }) => {
   const getKey = combineKeys.bind(null, innerKey);

@@ -5,7 +5,7 @@ import { HeaderType } from 'pages/Main/enums';
 
 import { Analyses } from './Analyses';
 import { AnimatedText } from './AnimatedText';
-import { headerItems } from './data';
+import { cardItems, headerItems } from './data';
 import { Description } from './Description';
 import { Faq } from './Faq';
 import { Header } from './Header';
@@ -28,10 +28,14 @@ export const Main: React.FC<IProps> = () => {
       <Header menuItems={headerItems} type={getHeaderType()} />
       <Layout.Content className={styles.Content}>
         <Description />
-        <Analyses />
+        <Analyses cards={cardItems} />
         <AnimatedText key={1231} innerKey="at-1" text="Как это работает" />
         <Steps />
-        <AnimatedText key={12} innerKey="at-2" text="Быстро.Бесплатно.\nТочно." />
+        <AnimatedText
+          key={12}
+          innerKey="at-2"
+          text="Быстро.Бесплатно.\nТочно."
+        />
         <Faq />
       </Layout.Content>
     </Layout>

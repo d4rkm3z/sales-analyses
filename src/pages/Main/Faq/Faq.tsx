@@ -14,19 +14,19 @@ const panels = [
   {
     id: 1,
     title: 'Какие знания нужны для проведения анализа?',
-    text: `Никаких. Сервис подскажет, что нужно сделат чтобы провести анализ и 
+    text: `Никаких. Сервис подскажет, что нужно сделать чтобы провести анализ и 
     правильно разобраться в его результатах.`,
   },
   {
     id: 2,
     title: 'Какие знания нужны для проведения анализа?',
-    text: `Никаких. Сервис подскажет, что нужно сделат чтобы провести анализ и 
+    text: `Никаких. Сервис подскажет, что нужно сделать чтобы провести анализ и 
     правильно разобраться в его результатах.`,
   },
   {
     id: 3,
     title: 'Какие знания нужны для проведения анализа?',
-    text: `Никаких. Сервис подскажет, что нужно сделат чтобы провести анализ и 
+    text: `Никаких. Сервис подскажет, что нужно сделать чтобы провести анализ и 
     правильно разобраться в его результатах.`,
   },
 ];
@@ -44,7 +44,11 @@ export const Faq: React.FC<IProps> = () => {
   return (
     <PaddingBlock className={styles.root}>
       <div className={styles.Title}>Остались вопросы?</div>
-      <Collapse expandIconPosition={'right'} expandIcon={CollapseExpandIcon} ghost>
+      <Collapse
+        expandIconPosition={'right'}
+        expandIcon={CollapseExpandIcon}
+        ghost
+      >
         {panels.map(({ id, title, text }) => (
           <Panel className={styles.Panel} key={id} header={PanelTitle(title)}>
             <Text type={'secondary'} className={styles.Content}>
