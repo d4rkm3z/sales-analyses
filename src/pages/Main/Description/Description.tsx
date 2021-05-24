@@ -1,7 +1,12 @@
 import React from 'react';
 import { defineMessages, FormattedMessage } from 'react-intl';
 import { Button, Typography } from 'antd';
+import classnames from 'classnames';
 import { PaddingBlock } from 'components/PaddingBlock';
+
+import { ReactComponent as LeftBackground } from './images/left.svg';
+import { ReactComponent as RightBottomBackground } from './images/right-bottom.svg';
+import { ReactComponent as RightTopBackground } from './images/right-top.svg';
 
 import styles from './Description.module.css';
 
@@ -27,6 +32,15 @@ const messages = defineMessages({
 export const Description: React.FC = () => {
   return (
     <PaddingBlock className={styles.root}>
+      <LeftBackground
+        className={classnames(styles.Background, styles.BackgroundLeft)}
+      />
+      <RightTopBackground
+        className={classnames(styles.Background, styles.BackgroundRight)}
+      />
+      <RightBottomBackground
+        className={classnames(styles.Background, styles.BackgroundRight)}
+      />
       <div className={styles.Title}>
         <FormattedMessage {...messages.title} />
       </div>
