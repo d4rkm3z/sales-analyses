@@ -7,6 +7,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'max-len': ['warn', { code: 80 }],
     'comma-dangle': 'off',
     'no-unused-vars': 'warn',
     'no-console': 'off',

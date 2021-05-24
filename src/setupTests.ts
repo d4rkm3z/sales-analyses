@@ -5,5 +5,7 @@
 import '@testing-library/jest-dom';
 
 module.exports = {
-  transformIgnorePatterns: ['/node_modules/(?!antd|@ant-design|rc-.+?|@babel/runtime).+(js|jsx)$'],
+  transformIgnorePatterns: [
+    '/node_modules/(?!antd|@ant-design|rc-.+?|@babel/runtime).+(js|jsx)$',
+  ],
 };
