@@ -32,15 +32,15 @@ const messages = defineMessages({
 export const Description: React.FC = () => {
   return (
     <PaddingBlock className={styles.root}>
-      <LeftBackground
-        className={classnames(styles.Background, styles.BackgroundLeft)}
-      />
-      <RightTopBackground
-        className={classnames(styles.Background, styles.BackgroundRight)}
-      />
-      <RightBottomBackground
-        className={classnames(styles.Background, styles.BackgroundRight)}
-      />
+      <div className={classnames(styles.Background, styles.BackgroundLeft)}>
+        <LeftBackground />
+      </div>
+      <div className={classnames(styles.Background, styles.BackgroundRight)}>
+        <RightTopBackground />
+      </div>
+      <div className={classnames(styles.Background, styles.BackgroundRight)}>
+        <RightBottomBackground />
+      </div>
       <div className={styles.Title}>
         <FormattedMessage {...messages.title} />
       </div>

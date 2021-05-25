@@ -6,7 +6,8 @@ import classnames from 'classnames';
 import { HeaderType } from 'pages/Main/enums';
 import { IMenuItem } from 'pages/Main/types';
 
-import styles from './Header.module.css';
+import styles from 'components/Header/Header.module.css';
+import { Link } from 'react-router-dom';
 
 interface IProps {
   menuItems: IMenuItem[];
@@ -21,15 +22,17 @@ export const Header: React.FC<IProps> = ({ menuItems, type }) => {
   }, [type]);
 
   return (
-    <Layout.Header className={classnames(styles.root, menuClassName)}>
+    <div className={classnames(styles.root, menuClassName)}>
       <Menu
         mode="horizontal"
         className={classnames(styles.Menu, menuClassName)}
       >
-        {menuItems.map(({ id, text }) => (
-          <Menu.Item key={id}>{text}</Menu.Item>
+        {menuItems.map(({ id, text, link }) => (
+          <Menu.Item key={id} className={styles.MenuItem}>
+            <Link to={link}>{text}</Link>
+          </Menu.Item>
         ))}
-        <Menu.Item className={styles.Button}>
+        <Menu.Item className={classnames(styles.Button, styles.MenuItem)}>
           <Button type={btnType}>
             <FormattedMessage
               id="header.button.calculating"
@@ -38,6 +41,6 @@ export const Header: React.FC<IProps> = ({ menuItems, type }) => {
           </Button>
         </Menu.Item>
       </Menu>
-    </Layout.Header>
+    </div>
   );
 };
