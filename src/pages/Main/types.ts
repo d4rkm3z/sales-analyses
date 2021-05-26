@@ -19,4 +19,5 @@ export interface ICardItem {
   title: string;
   image: ICommonImage;
   tag?: string;
+  disable?: boolean;
 }

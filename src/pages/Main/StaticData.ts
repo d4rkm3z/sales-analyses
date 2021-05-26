@@ -19,5 +19,6 @@ export const cardItems: ICardItem[] = [
     title: 'XYZ анализ',
     tag: 'скоро появится',
     image: { src: tubeImage, alt: '', width: '18vw' },
+    disable: true,
   },
 ];
