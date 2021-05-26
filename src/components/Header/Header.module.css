@@ -16,8 +16,17 @@
   }
 }
 
+.InnerWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 65%;
+}
+
 .Menu {
   border: none;
+  width: max-content;
+  min-width: max-content;
 
   &.Default {
     background: none;

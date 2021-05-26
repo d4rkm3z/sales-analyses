@@ -21,12 +21,6 @@ module.exports = {
         features: {
           'nesting-rules': true,
         },
-        // plugins: [
-        // require('postcss-nesting'),
-        //   cssnano({
-        //     preset: 'default',
-        //   }),
-        // ],
       },
     },
   },

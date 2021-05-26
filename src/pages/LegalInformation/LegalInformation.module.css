@@ -1,2 +1,40 @@
 .root {
+  padding: 7vw 18.333vw;
+}
+
+.Content {
+  width: 70%;
+  color: rgba(0, 32, 51, 0.6);
+}
+
+.Title {
+  padding: 2.083vw 0;
+  font-weight: bold;
+}
+
+.Header {
+  padding-bottom: 3.333vw;
+  border-bottom: 1px solid rgba(0, 65, 102, 0.2);
+
+  & .Title {
+    font-size: 4.167vw;
+  }
+
+  & .Content {
+    font-size: 1.250vw;
+  }
+}
+
+
+.Body {
+  padding-top: 3.333vw;
+
+  & .Title {
+    padding: 0.833vw 0;
+    font-size: 1.667vw;
+  }
+
+  & .Content {
+    font-size: 0.833vw;
+  }
 }

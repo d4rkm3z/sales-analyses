@@ -23,24 +23,25 @@ export const Header: React.FC<IProps> = ({ menuItems, type }) => {
 
   return (
     <div className={classnames(styles.root, menuClassName)}>
-      <Menu
-        mode="horizontal"
-        className={classnames(styles.Menu, menuClassName)}
-      >
-        {menuItems.map(({ id, text, link }) => (
-          <Menu.Item key={id} className={styles.MenuItem}>
-            <Link to={link}>{text}</Link>
-          </Menu.Item>
-        ))}
-        <Menu.Item className={classnames(styles.Button, styles.MenuItem)}>
-          <Button type={btnType}>
-            <FormattedMessage
-              id="header.button.calculating"
-              defaultMessage="Начать анализ"
-            />
-          </Button>
-        </Menu.Item>
-      </Menu>
+      <div className={styles.InnerWrapper}>
+        <Menu
+          mode="horizontal"
+          inlineCollapsed={false}
+          className={classnames(styles.Menu, menuClassName)}
+        >
+          {menuItems.map(({ id, text, link }) => (
+            <Menu.Item key={id} className={styles.MenuItem}>
+              <Link to={link}>{text}</Link>
+            </Menu.Item>
+          ))}
+        </Menu>
+        <Button type={btnType}>
+          <FormattedMessage
+            id="header.button.calculating"
+            defaultMessage="Начать анализ"
+          />
+        </Button>
+      </div>
     </div>
   );
 };
